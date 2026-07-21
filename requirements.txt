@@ -1,2 +1,10 @@
 fastapi
-python-3.12
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+python-jose[cryptography]
+passlib[bcrypt]
+python-dotenv
+pydantic
+pydantic-settings
+python-multipart
