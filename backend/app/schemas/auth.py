@@ -24,11 +24,27 @@ class LoginRequest(BaseModel):
     email: EmailStr
     password: str
 
+class TokenUser(BaseModel):
+    id: int
+    full_name: str
+    role: RoleEnum
+
+
 
 class Token(BaseModel):
     access_token: str
+    refresh_token: str
     token_type: str = "bearer"
-    role: RoleEnum
+    user: TokenUser
+
+    
+class RefreshRequest(BaseModel):
+    refresh_token: str
+
+
+class AccessTokenOnly(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
 
 
 class TokenData(BaseModel):
