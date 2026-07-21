@@ -1,1 +1,0 @@
-# marks schemas as a package
