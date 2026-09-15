@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hotel Profile | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <h1 class="page-title">Hotel Profile</h1>
+                        <p class="page-subtitle">Maintain official hotel contact information.</p>
+                    </div>
+                    <section class="card form-card">
+                        <div class="form-card-body">
+                            <form id="hotelProfileForm">
+                                <div class="form-grid">
+                                    <div class="form-group"><label class="form-label">Hotel name *</label><input
+                                            id="hotelName" class="form-control" required minlength="2" maxlength="150">
+                                    </div>
+                                    <div class="form-group"><label class="form-label">Phone *</label><input
+                                            id="hotelPhone" class="form-control" required minlength="7" maxlength="20">
+                                    </div>
+                                    <div class="form-group full-width"><label class="form-label">Email *</label><input
+                                            type="email" id="hotelEmail" class="form-control" required></div>
+                                    <div class="form-group full-width"><label class="form-label">Address
+                                            *</label><textarea id="hotelAddress" class="form-control" rows="4" required
+                                            minlength="5"></textarea></div>
+                                </div>
+                                <div id="settingsError" class="form-error"></div>
+                                <div class="form-actions"><a href="index.html" class="btn btn-outline">Cancel</a><button
+                                        id="saveSettingsButton" class="btn btn-primary">Save Profile</button></div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+</body>
+
+</html>

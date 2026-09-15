@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Staff | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Create Staff Account</h1>
+                            <p class="page-subtitle">Add a hotel team member and assign their access role.</p>
+                        </div>
+                    </div>
+
+                    <section class="card form-card">
+                        <div class="form-card-header">
+                            <div class="form-card-icon"><i class="fa-solid fa-user-plus"></i></div>
+                            <div>
+                                <h2>Staff Information</h2>
+                                <p>Enter the employee's account information below.</p>
+                            </div>
+                        </div>
+                        <div class="form-card-body">
+                            <form id="staffForm">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label" for="staffName">Full name</label>
+                                        <input id="staffName" class="form-control" type="text" required
+                                            autocomplete="name" placeholder="Enter full name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="staffEmail">Email address</label>
+                                        <input id="staffEmail" class="form-control" type="email" required
+                                            autocomplete="email" placeholder="name@hotel.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="staffUsername">Username</label>
+                                        <input id="staffUsername" class="form-control" type="text" required
+                                            autocomplete="username" placeholder="Enter username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="staffPassword">Temporary password</label>
+                                        <input id="staffPassword" class="form-control" type="password" required
+                                            minlength="8" autocomplete="new-password"
+                                            placeholder="Minimum 8 characters">
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label" for="staffRole">Access role</label>
+                                        <select id="staffRole" class="form-select" required disabled>
+                                            <option value="">Loading roles...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="staffFormError" class="form-error" role="alert"></div>
+                                <div class="form-actions">
+                                    <a href="index.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i>
+                                        Cancel</a>
+                                    <button id="createStaffButton" type="submit" class="btn btn-primary">
+                                        <i class="fa-solid fa-user-plus"></i> Create Staff
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div id="toast-container"></div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/toast.js"></script>
+    <script src="../../assets/js/staff.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            if (!getToken()) {
+                window.location.href = "../auth/login.html";
+                return;
+            }
+            loadComponent("toast-container", "../../components/toast.html");
+            const roleSelect = document.getElementById("staffRole");
+            try {
+                const response = await fetch(`${API_BASE_URL}/users/roles`, {
+                    headers: { "Authorization": `Bearer ${getToken()}` }
+                });
+                const result = await response.json();
+                if (!response.ok || !result.success) throw new Error(result.detail || result.message);
+                roleSelect.innerHTML = '<option value="">Select a role</option>' + result.data
+                    .map(role => `<option value="${role.id}">${role.name.replaceAll('_', ' ')}</option>`)
+                    .join('');
+                roleSelect.disabled = false;
+            } catch (error) {
+                roleSelect.innerHTML = '<option value="">Unable to load roles</option>';
+                document.getElementById("staffFormError").textContent = error.message || "Unable to load roles";
+            }
+        });
+    </script>
+</body>
+
+</html>

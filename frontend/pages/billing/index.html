@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Billing | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="operation-page">
+                    <div class="operation-header">
+                        <div class="operation-heading">
+                            <div class="operation-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                            <div>
+                                <h1 class="page-title">Billing</h1>
+                                <p class="page-subtitle">Create invoices for completed stays and track balances.</p>
+                            </div>
+                        </div><a href="create.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create
+                            Invoice</a>
+                    </div>
+                    <section class="card operation-card">
+                        <div class="table-wrapper operation-table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice</th>
+                                        <th>Guest</th>
+                                        <th>Room</th>
+                                        <th>Total</th>
+                                        <th>Balance</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="billingTableBody">
+                                    <tr>
+                                        <td colspan="7" class="empty-state">Loading invoices...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/billing.js"></script>
+</body>
+
+</html>

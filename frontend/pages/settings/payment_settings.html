@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Payment Settings | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <h1 class="page-title">Payment Methods</h1>
+                        <p class="page-subtitle">Choose which methods appear when collecting invoice payments.</p>
+                    </div>
+                    <section class="card form-card">
+                        <div class="form-card-body">
+                            <form id="paymentSettingForm">
+                                <div class="form-grid"><label class="setting-check"><input type="checkbox"
+                                            id="cashPayment"><span><b>Cash</b><br><small>Accept payment at the front
+                                                desk</small></span></label><label class="setting-check"><input
+                                            type="checkbox" id="upiPayment"><span><b>UPI</b><br><small>Accept supported
+                                                UPI payments</small></span></label><label class="setting-check"><input
+                                            type="checkbox" id="cardPayment"><span><b>Card</b><br><small>Accept debit or
+                                                credit cards</small></span></label></div>
+                                <div id="settingsError" class="form-error"></div>
+                                <div class="form-actions"><a href="index.html" class="btn btn-outline">Cancel</a><button
+                                        id="savePaymentSettingButton" class="btn btn-primary">Save Payment
+                                        Methods</button></div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+</body>
+
+</html>

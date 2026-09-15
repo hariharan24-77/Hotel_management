@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Invoice | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .invoice-sheet {
+            max-width: 760px;
+            margin: auto;
+            padding: 36px
+        }
+
+        .invoice-sheet hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #e2e8f0
+        }
+
+        .invoice-sheet h2 {
+            margin-bottom: 18px
+        }
+
+        .invoice-sheet h3 {
+            margin: 18px 0 8px
+        }
+
+        .invoice-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        @media print {
+
+            #sidebar-container,
+            #navbar-container,
+            .invoice-actions {
+                display: none
+            }
+
+            .main-wrapper {
+                margin: 0
+            }
+
+            .dashboard-content {
+                padding: 0
+            }
+
+            .invoice-sheet {
+                box-shadow: none;
+                border: 0
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <section class="card invoice-sheet">
+                    <div id="invoiceDetails">
+                        <p>Loading invoice...</p>
+                    </div>
+                    <div class="invoice-actions"><a href="index.html" class="btn btn-outline">Back</a><button
+                            onclick="printInvoice()" class="btn btn-primary"><i class="fa-solid fa-print"></i> Print
+                            Invoice</button></div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/billing.js"></script>
+</body>
+
+</html>
