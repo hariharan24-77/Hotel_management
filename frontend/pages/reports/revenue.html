@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Revenue Report | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="operation-page">
+                    <div class="operation-header">
+                        <div>
+                            <h1 class="page-title">Revenue Report</h1>
+                            <p class="page-subtitle">Revenue is calculated from successfully recorded payments.</p>
+                        </div><a href="dashboard.html" class="btn btn-outline">Reports Home</a>
+                    </div>
+                    <section class="card p-20">
+                        <div class="report-filter">
+                            <div><label class="form-label">From date</label><input type="date" id="fromDate"
+                                    class="form-control" required></div>
+                            <div><label class="form-label">To date</label><input type="date" id="toDate"
+                                    class="form-control" required></div><button class="btn btn-primary"
+                                onclick="loadRevenueReport()">Generate</button>
+                        </div>
+                        <div id="reportError" class="form-error"></div>
+                        <h2 class="report-total" id="revenueTotal">₹ 0.00</h2>
+                    </section>
+                    <section class="card report-chart mt-20"><canvas id="revenueReportChart"></canvas></section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/reports.js"></script>
+</body>
+
+</html>

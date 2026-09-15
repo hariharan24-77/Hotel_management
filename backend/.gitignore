@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Virtual environments
 env/
 venv/
@@ -18,3 +19,9 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+=======
+.env
+env
+alembic
+alembic.ini
+>>>>>>> sakthi

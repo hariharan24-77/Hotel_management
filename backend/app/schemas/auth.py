@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from pydantic import BaseModel, EmailStr
 from app.models.user import RoleEnum
 
@@ -50,3 +51,26 @@ class AccessTokenOnly(BaseModel):
 class TokenData(BaseModel):
     user_id: int | None = None
     role: str | None = None
+=======
+from pydantic import BaseModel,EmailStr
+
+
+
+class LoginRequest(BaseModel):
+
+    email:EmailStr
+
+    password:str
+
+
+
+class TokenResponse(BaseModel):
+
+    access_token:str
+
+    token_type:str
+
+    role:str
+    
+    role_id : str
+>>>>>>> sakthi

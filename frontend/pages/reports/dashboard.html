@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Reports | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="operation-page">
+                    <div class="operation-header">
+                        <div>
+                            <h1 class="page-title">Reports</h1>
+                            <p class="page-subtitle">Live operational and collected-revenue analytics.</p>
+                        </div>
+                        <div class="report-links"><a href="revenue.html" class="btn btn-outline">Revenue</a><a
+                                href="occupancy.html" class="btn btn-outline">Occupancy</a></div>
+                    </div>
+                    <div id="reportError" class="form-error"></div>
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div>
+                                <h3>Total Rooms</h3>
+                                <h2 id="totalRooms">0</h2>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div>
+                                <h3>Available</h3>
+                                <h2 id="availableRooms">0</h2>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div>
+                                <h3>Occupied</h3>
+                                <h2 id="occupiedRooms">0</h2>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div>
+                                <h3>Collected Revenue</h3>
+                                <h2 id="totalRevenue">₹ 0.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="card report-chart mt-20"><canvas id="revenueChart"></canvas></section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/reports.js"></script>
+</body>
+
+</html>

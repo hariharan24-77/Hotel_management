@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Room Types</title>
+
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <div id="sidebar-container"></div>
+
+        <div class="main-wrapper">
+
+            <div id="navbar-container"></div>
+
+            <main class="dashboard-content">
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h1 class="page-title">Room Types</h1>
+
+                        <p class="page-subtitle">
+                            Manage hotel room types and pricing.
+                        </p>
+
+                    </div>
+
+                    <a href="create.html" class="btn btn-primary">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Room Type
+                    </a>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="toolbar">
+
+                        <div class="search-box">
+
+                            <input type="text" id="searchRoomType" class="form-control"
+                                placeholder="Search room type...">
+
+                        </div>
+
+                        <div class="filter-box">
+
+                            <select id="statusFilter" class="form-select">
+
+                                <option value="">All Status</option>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+
+                            </select>
+
+                        </div>
+
+                        <button class="btn btn-secondary" onclick="loadRoomTypes()">
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+                    <div class="table-responsive">
+
+                        <table class="table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>#</th>
+                                    <th>Room Type</th>
+                                    <th>Base Price</th>
+                                    <th>Capacity</th>
+                                    <th>Bed Type</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="roomTypeTableBody">
+
+                                <tr>
+
+                                    <td colspan="7" class="text-center">
+                                        Loading...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+            <div id="footer-container"></div>
+
+        </div>
+
+    </div>
+
+    <div id="loader-container"></div>
+
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/room_types.js"></script>
+
+    <script>
+
+        loadComponent("../../components/sidebar.html", "sidebar-container");
+        loadComponent("../../components/navbar.html", "navbar-container");
+        loadComponent("../../components/footer.html", "footer-container");
+        loadComponent("../../components/loader.html", "loader-container");
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            checkAuthentication();
+
+            loadRoomTypes();
+
+            document
+                .getElementById("searchRoomType")
+                .addEventListener("keyup", searchRoomTypes);
+
+            document
+                .getElementById("statusFilter")
+                .addEventListener("change", filterRoomTypes);
+
+        });
+
+    </script>
+
+    <div id="confirm-modal-container"></div>
+
+    <script src="../../assets/js/confirm-modal.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/confirm-modal.html",
+            "confirm-modal-container"
+        );
+    </script>
+
+    <div id="toast-container"></div>
+
+    <script src="../../assets/js/toast.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/toast.html",
+            "toast-container"
+        );
+    </script>
+
+</body>
+
+</html>

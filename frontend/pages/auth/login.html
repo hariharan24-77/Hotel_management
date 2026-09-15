@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Hotel Management System - Login</title>
+
+    <link rel="stylesheet" href="../../assets/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="login-wrapper">
+
+        <div class="login-image">
+
+            <div class="overlay">
+
+                <div class="brand-content">
+
+                    <h1>
+                        <i class="fa-solid fa-hotel"></i>
+                        Grand Palace Hotel
+                    </h1>
+
+                    <p>
+                        Hotel Management System
+                    </p>
+
+                    <span>
+                        Manage rooms, guests, reservations and billing easily.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="login-section">
+
+
+            <div class="login-card">
+
+
+                <div class="login-header">
+
+                    <div class="logo">
+
+                        <i class="fa-solid fa-building"></i>
+
+                    </div>
+
+                    <h2>
+                        Staff Login
+                    </h2>
+
+                    <p>
+                        Access your hotel management dashboard
+                    </p>
+
+                </div>
+
+
+
+                <form id="loginForm">
+
+
+                    <div class="input-group">
+
+                        <label>Email Address</label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label>Password</label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input type="password" id="password" name="password" placeholder="Enter your password">
+
+
+                            <button type="button" class="password-toggle" onclick="togglePassword()">
+
+                                <i class="fa-solid fa-eye" id="eyeIcon">
+                                </i>
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="login-options">
+
+
+                        <label class="remember">
+
+                            <input type="checkbox" id="remember">
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+
+                    </div>
+
+
+
+                    <button type="submit" class="login-btn" id="loginButton">
+
+                        <span>
+                            Login
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+
+                </form>
+
+
+                <div id="loginMessage"></div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+
+
+    <script>
+
+        function togglePassword() {
+
+            const password =
+                document.getElementById("password");
+
+
+            const icon =
+                document.getElementById("eyeIcon");
+
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                icon.classList.remove(
+                    "fa-eye"
+                );
+
+                icon.classList.add(
+                    "fa-eye-slash"
+                );
+
+            }
+            else {
+
+                password.type = "password";
+
+                icon.classList.remove(
+                    "fa-eye-slash"
+                );
+
+                icon.classList.add(
+                    "fa-eye"
+                );
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

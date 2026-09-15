@@ -1,0 +1,92 @@
+/* Dashboard and shared shell use the same navy/blue theme as login. */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    background: #f4f7fb;
+}
+
+#sidebar-container { flex: 0 0 260px; }
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    overflow-y: auto;
+    color: #fff;
+    background: linear-gradient(180deg, #0b1f3a 0%, #183b65 100%);
+    box-shadow: 8px 0 30px rgba(7, 26, 56, .15);
+    z-index: 20;
+}
+
+.sidebar-logo { display: flex; align-items: center; gap: 12px; padding: 0 10px 24px; }
+.logo-image { width: 46px; height: 46px; object-fit: contain; border-radius: 10px; }
+.logo-text h3 { font-size: 18px; color: #fff; }
+.logo-text span { font-size: 11px; color: #b9c9e2; }
+.sidebar-menu { display: grid; gap: 5px; flex: 1; }
+.sidebar .menu-item {
+    display: flex; align-items: center; gap: 13px; width: 100%;
+    padding: 11px 13px; border-radius: 9px; color: #c9d7eb;
+    font-size: 13px; background: transparent; transition: .2s ease;
+}
+.sidebar .menu-item:hover, .sidebar .menu-item.active { color: #0b1f3a; background: #d4af37; }
+.sidebar .menu-item i { width: 20px; text-align: center; }
+.sidebar-footer { padding-top: 12px; border-top: 1px solid rgba(255,255,255,.12); }
+
+.main-wrapper { flex: 1; min-width: 0; margin-left: 0; }
+.navbar {
+    height: 76px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 30px; background: #fff; border-bottom: 1px solid #e4eaf3;
+    position: sticky; top: 0; z-index: 10;
+}
+.navbar-left, .navbar-right, .user-profile { display: flex; align-items: center; }
+.navbar-left { gap: 16px; }
+.navbar-right { gap: 18px; position: relative; }
+.sidebar-toggle { display: none; background: transparent; color: #0b2b5b; font-size: 20px; }
+.navbar-title h3 { color: #071a38; font-size: 18px; }
+.navbar-search { display: flex; overflow: hidden; border: 1px solid #dce4ef; border-radius: 9px; }
+.navbar-search input { width: 190px; border: 0; padding: 9px 12px; }
+.navbar-search button { padding: 0 12px; color: #d4af37; background: #fff; }
+.icon-button { position: relative; padding: 9px; color: #0b2b5b; background: #edf4ff; border-radius: 9px; }
+.notification-count { position: absolute; top: -5px; right: -5px; min-width: 17px; padding: 1px 4px; color: #0b1f3a; background: #d4af37; border-radius: 10px; font-size: 10px; }
+.user-profile { gap: 10px; }
+.user-avatar { display: grid; place-items: center; width: 38px; height: 38px; color: #0b1f3a; background: #d4af37; border-radius: 50%; }
+.user-info h5 { color: #071a38; font-size: 13px; }
+.user-info span { color: #718096; font-size: 11px; }
+.profile-toggle { color: #718096; background: transparent; }
+.profile-dropdown { display: none; }
+
+.dashboard-content { padding: 32px; }
+.page-header { margin-bottom: 24px; }
+.page-title { color: #071a38; font-size: 30px; }
+.page-subtitle { margin-top: 5px; color: #718096; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.dashboard-card {
+    display: flex; align-items: center; gap: 16px; min-height: 135px;
+    padding: 22px; background: #fff; border: 1px solid #e8edf5;
+    border-radius: 16px; box-shadow: 0 8px 24px rgba(7, 26, 56, .06);
+}
+.dashboard-card h3 { margin-bottom: 6px; color: #718096; font-size: 13px; font-weight: 500; }
+.dashboard-card h2 { color: #071a38; font-size: 30px; }
+.card-icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 14px; font-size: 21px; }
+.card-icon.blue { color: #0b1f3a; background: #f8f1d8; }
+.card-icon.green { color: #078a61; background: #e6f8f1; }
+.card-icon.orange { color: #c56b05; background: #fff1df; }
+.card-icon.purple { color: #7357c7; background: #f0ebff; }
+
+@media (max-width: 1050px) {
+    .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+    .navbar-search { display: none; }
+}
+@media (max-width: 760px) {
+    #sidebar-container { flex-basis: 0; }
+    .sidebar { transform: translateX(-100%); transition: .25s ease; }
+    .sidebar:not(.collapsed) { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .dashboard-content { padding: 22px 16px; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .navbar { padding: 0 16px; }
+    .navbar-title, .user-info { display: none; }
+}

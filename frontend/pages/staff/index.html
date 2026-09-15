@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+
+    <title>
+        Staff Management
+    </title>
+
+
+    <link rel="stylesheet" href="../../assets/css/common.css">
+
+
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+
+</head>
+
+
+
+<body>
+
+
+
+    <div class="app-container">
+
+
+
+        <div id="sidebar-container"></div>
+
+
+
+
+        <div class="main-wrapper">
+
+
+
+            <div id="navbar-container"></div>
+
+
+
+
+
+            <main class="dashboard-content">
+
+
+
+                <div class="page-header">
+
+
+                    <div>
+
+
+                        <h1 class="page-title">
+
+                            Staff Management
+
+                        </h1>
+
+
+                        <p>
+
+                            Manage hotel employees
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <a href="create.html" class="btn btn-primary">
+
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Staff
+
+
+                    </a>
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <div class="table-wrapper">
+
+
+
+                    <table class="table">
+
+
+                        <thead>
+
+
+                            <tr>
+
+                                <th>
+                                    Name
+                                </th>
+
+
+                                <th>
+                                    Username
+                                </th>
+
+
+                                <th>
+                                    Email
+                                </th>
+
+
+                                <th>
+                                    Role
+                                </th>
+
+
+                                <th>
+                                    Status
+                                </th>
+
+
+                                <th>
+                                    Action
+                                </th>
+
+
+                            </tr>
+
+
+                        </thead>
+
+
+
+
+                        <tbody id="staffTableBody">
+
+
+                        </tbody>
+
+
+
+                    </table>
+
+
+                </div>
+
+
+
+            </main>
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="../../assets/js/api.js"></script>
+
+    <script src="../../assets/js/auth.js"></script>
+
+    <script src="../../assets/js/common.js"></script>
+
+    <script src="../../assets/js/staff.js"></script>
+
+    <div id="loader-container"></div>
+
+    <script src="../../assets/js/loader.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/loader.html",
+            "loader-container"
+        );
+    </script>
+
+    <div id="modal-container"></div>
+
+    <script src="../../assets/js/modal.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/modal.html",
+            "modal-container"
+        );
+    </script>
+
+
+    <div id="confirm-modal-container"></div>
+
+    <script src="../../assets/js/confirm-modal.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/confirm-modal.html",
+            "confirm-modal-container"
+        );
+    </script>
+
+    <div id="toast-container"></div>
+
+    <script src="../../assets/js/toast.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/toast.html",
+            "toast-container"
+        );
+    </script>
+
+
+</body>
+
+
+</html>

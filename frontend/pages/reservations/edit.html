@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Edit Reservation | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Edit Reservation</h1>
+                            <p class="page-subtitle">Update the stay details and booking status.</p>
+                        </div>
+                    </div>
+                    <section class="card form-card">
+                        <div class="form-card-header">
+                            <div class="form-card-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                            <div>
+                                <h2>Reservation Details</h2>
+                                <p id="bookingReference">Loading reservation...</p>
+                            </div>
+                        </div>
+                        <div class="form-card-body">
+                            <form id="editReservationForm">
+                                <div class="form-grid">
+                                    <div class="form-group"><label class="form-label" for="editRoomId">Room <span
+                                                class="required-mark">*</span></label><select id="editRoomId"
+                                            class="form-select" required>
+                                            <option value="">Select a room</option>
+                                        </select></div>
+                                    <div class="form-group"><label class="form-label" for="editStatus">Status <span
+                                                class="required-mark">*</span></label><select id="editStatus"
+                                            class="form-select" required>
+                                            <option>Pending</option>
+                                            <option>Confirmed</option>
+                                            <option>Checked-In</option>
+                                            <option>Completed</option>
+                                            <option>Cancelled</option>
+                                        </select></div>
+                                    <div class="form-group"><label class="form-label" for="editCheckIn">Check-in <span
+                                                class="required-mark">*</span></label><input type="date"
+                                            id="editCheckIn" class="form-control" required></div>
+                                    <div class="form-group"><label class="form-label" for="editCheckOut">Check-out <span
+                                                class="required-mark">*</span></label><input type="date"
+                                            id="editCheckOut" class="form-control" required></div>
+                                    <div class="form-group"><label class="form-label" for="editAdults">Adults <span
+                                                class="required-mark">*</span></label><input type="number"
+                                            id="editAdults" class="form-control" min="1" max="20" required></div>
+                                    <div class="form-group"><label class="form-label" for="editChildren">Children <span
+                                                class="required-mark">*</span></label><input type="number"
+                                            id="editChildren" class="form-control" min="0" max="20" required></div>
+                                    <div class="form-group full-width"><label class="form-label"
+                                            for="editSpecialRequest">Special request</label><textarea
+                                            id="editSpecialRequest" class="form-control" rows="4"
+                                            maxlength="2000"></textarea></div>
+                                </div>
+                                <div id="editReservationError" class="form-error" role="alert"></div>
+                                <div class="form-actions"><a href="index.html" class="btn btn-outline">Cancel</a><button
+                                        id="updateReservationButton" class="btn btn-primary"><i
+                                            class="fa-solid fa-floppy-disk"></i> Save Changes</button></div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/reservations.js"></script>
+</body>
+
+</html>

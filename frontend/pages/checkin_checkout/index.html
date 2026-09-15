@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check In / Check Out</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <div id="sidebar-container"></div>
+
+        <div class="main-wrapper">
+
+            <div id="navbar-container"></div>
+
+            <main class="dashboard-content">
+
+                <div class="page-header">
+
+                    <h1 class="page-title">
+                        Check-in Management
+                    </h1>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Booking ID</th>
+
+                                <th>Guest</th>
+
+                                <th>Room</th>
+
+                                <th>Date</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="checkinTableBody">
+
+                        </tbody>
+
+
+                    </table>
+
+                </div>
+
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script>window.location.replace("checkin.html");</script>
+
+    <div id="loader-container"></div>
+
+    <script src="../../assets/js/loader.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/loader.html",
+            "loader-container"
+        );
+    </script>
+
+    <div id="modal-container"></div>
+
+    <script src="../../assets/js/modal.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/modal.html",
+            "modal-container"
+        );
+    </script>
+
+    <div id="confirm-modal-container"></div>
+
+    <script src="../../assets/js/confirm-modal.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/confirm-modal.html",
+            "confirm-modal-container"
+        );
+    </script>
+
+    <div id="toast-container"></div>
+
+    <script src="../../assets/js/toast.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/toast.html",
+            "toast-container"
+        );
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Room Type | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <h1 class="page-title">Edit Room Type</h1>
+                        <p class="page-subtitle">Update pricing, capacity, bed type, and availability.</p>
+                    </div>
+                    <section class="card form-card">
+                        <div class="form-card-header">
+                            <div class="form-card-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                            <div>
+                                <h2>Room Type Details</h2>
+                                <p>Existing details are loaded from PostgreSQL.</p>
+                            </div>
+                        </div>
+                        <div class="form-card-body">
+                            <form id="editRoomTypeForm">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editRoomTypeName">Room type name</label>
+                                        <input id="editRoomTypeName" class="form-control" required minlength="2">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="editBasePrice">Base price per night</label>
+                                        <input id="editBasePrice" class="form-control" type="number" required min="0.01"
+                                            step="0.01">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="editCapacity">Guest capacity</label>
+                                        <input id="editCapacity" class="form-control" type="number" required min="1"
+                                            max="20">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="editBedType">Bed type</label>
+                                        <input id="editBedType" class="form-control" required minlength="2"
+                                            maxlength="50">
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label" for="editRoomTypeStatus">Status</label>
+                                        <select id="editRoomTypeStatus" class="form-select" required>
+                                            <option value="true">Active</option>
+                                            <option value="false">Inactive</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label" for="editDescription">Description</label>
+                                        <textarea id="editDescription" class="form-control" rows="4"
+                                            maxlength="500"></textarea>
+                                    </div>
+                                </div>
+                                <div id="editRoomTypeError" class="form-error" role="alert"></div>
+                                <div class="form-actions">
+                                    <a href="index.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i>
+                                        Cancel</a>
+                                    <button id="updateRoomTypeButton" type="submit" class="btn btn-primary"><i
+                                            class="fa-solid fa-floppy-disk"></i> Update Room Type</button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/room_types.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Edit Guest | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <h1 class="page-title">Edit Guest</h1>
+                        <p class="page-subtitle">Update guest contact and identity information.</p>
+                    </div>
+                    <section class="card form-card">
+                        <div class="form-card-header">
+                            <div class="form-card-icon"><i class="fa-solid fa-user-pen"></i></div>
+                            <div>
+                                <h2>Guest Details</h2>
+                                <p>Existing details are loaded from PostgreSQL.</p>
+                            </div>
+                        </div>
+                        <div class="form-card-body">
+                            <form id="editGuestForm">
+                                <div class="form-grid">
+                                    <div class="form-group"><label class="form-label" for="editGuestName">Full
+                                            name</label><input id="editGuestName" class="form-control" required
+                                            minlength="2"></div>
+                                    <div class="form-group"><label class="form-label"
+                                            for="editGuestPhone">Phone</label><input id="editGuestPhone"
+                                            class="form-control" type="tel" required pattern="[0-9]{10}" minlength="10"
+                                            maxlength="10" inputmode="numeric" title="Enter exactly 10 digits"></div>
+                                    <div class="form-group"><label class="form-label"
+                                            for="editGuestEmail">Email</label><input id="editGuestEmail" type="email"
+                                            class="form-control" required></div>
+                                    <div class="form-group"><label class="form-label"
+                                            for="editGuestGender">Gender</label><input id="editGuestGender"
+                                            class="form-control" required maxlength="30"></div>
+                                    <div class="form-group"><label class="form-label" for="editGuestDob">Date of
+                                            birth</label><input type="date" data-dob id="editGuestDob"
+                                            class="form-control" required></div>
+                                    <div class="form-group"><label class="form-label" for="editIdProofType">ID proof
+                                            type</label><input id="editIdProofType" class="form-control" required
+                                            maxlength="50"></div>
+                                    <div class="form-group full-width"><label class="form-label"
+                                            for="editIdProofNumber">ID proof number</label><input id="editIdProofNumber"
+                                            class="form-control" required minlength="3"></div>
+                                    <div class="form-group full-width"><label class="form-label"
+                                            for="editGuestAddress">Address</label><textarea id="editGuestAddress"
+                                            class="form-control" rows="4" required minlength="5"></textarea></div>
+                                </div>
+                                <div id="editGuestError" class="form-error" role="alert"></div>
+                                <div class="form-actions"><a href="index.html" class="btn btn-outline">Cancel</a><button
+                                        id="updateGuestButton" class="btn btn-primary"><i
+                                            class="fa-solid fa-floppy-disk"></i> Update Guest</button></div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/guest.js"></script>
+</body>
+
+</html>
