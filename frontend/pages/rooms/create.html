@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <h1 class="page-title">Create New Room</h1>
+                        <p class="page-subtitle">Add a physical room and connect it to a database room type.</p>
+                    </div>
+                    <section class="card form-card">
+                        <div class="form-card-header">
+                            <div class="form-card-icon"><i class="fa-solid fa-bed"></i></div>
+                            <div>
+                                <h2>Room Details</h2>
+                                <p>The new room will initially be available for reservations.</p>
+                            </div>
+                        </div>
+                        <div class="form-card-body">
+                            <form id="roomForm">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label" for="roomNumber">Room number</label>
+                                        <input id="roomNumber" class="form-control" required maxlength="30"
+                                            placeholder="e.g. 101">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="floor">Floor</label>
+                                        <input type="number" id="floor" class="form-control" required min="0" max="200"
+                                            placeholder="e.g. 1">
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label" for="roomType">Room type</label>
+                                        <select id="roomType" class="form-select" required disabled>
+                                            <option value="">Loading room types...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="roomFormError" class="form-error" role="alert"></div>
+                                <div class="form-actions">
+                                    <a href="index.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i>
+                                        Cancel</a>
+                                    <button id="saveRoomButton" type="submit" class="btn btn-primary"><i
+                                            class="fa-solid fa-floppy-disk"></i> Save Room</button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/rooms.js"></script>
+</body>
+
+</html>

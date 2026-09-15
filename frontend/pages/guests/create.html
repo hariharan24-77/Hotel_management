@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Create Guest | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <h1 class="page-title">Create Guest</h1>
+                        <p class="page-subtitle">Register a guest using verified contact and identity information.</p>
+                    </div>
+                    <section class="card form-card">
+                        <div class="form-card-header">
+                            <div class="form-card-icon"><i class="fa-solid fa-user-plus"></i></div>
+                            <div>
+                                <h2>Guest Details</h2>
+                                <p>Guest information will be securely stored in PostgreSQL.</p>
+                            </div>
+                        </div>
+                        <div class="form-card-body">
+                            <form id="guestForm">
+                                <div class="form-grid">
+                                    <div class="form-group"><label class="form-label" for="guestGuestName">Full
+                                            name</label><input id="guestGuestName" class="form-control" required
+                                            minlength="2"></div>
+                                    <div class="form-group"><label class="form-label"
+                                            for="guestGuestPhone">Phone</label><input id="guestGuestPhone"
+                                            class="form-control" type="tel" required pattern="[0-9]{10}" minlength="10"
+                                            maxlength="10" inputmode="numeric" title="Enter exactly 10 digits"></div>
+                                    <div class="form-group"><label class="form-label"
+                                            for="guestGuestEmail">Email</label><input id="guestGuestEmail" type="email"
+                                            class="form-control" required></div>
+                                    <div class="form-group"><label class="form-label"
+                                            for="guestGuestGender">Gender</label><input id="guestGuestGender"
+                                            class="form-control" required maxlength="30"></div>
+                                    <div class="form-group"><label class="form-label" for="guestGuestDob">Date of
+                                            birth</label><input type="date" data-dob id="guestGuestDob"
+                                            class="form-control" required></div>
+                                    <div class="form-group"><label class="form-label" for="guestIdProofType">ID proof
+                                            type</label><input id="guestIdProofType" class="form-control" required
+                                            maxlength="50"></div>
+                                    <div class="form-group full-width"><label class="form-label"
+                                            for="guestIdProofNumber">ID proof number</label><input
+                                            id="guestIdProofNumber" class="form-control" required minlength="3"></div>
+                                    <div class="form-group full-width"><label class="form-label"
+                                            for="guestGuestAddress">Address</label><textarea id="guestGuestAddress"
+                                            class="form-control" rows="4" required minlength="5"></textarea></div>
+                                </div>
+                                <div id="guestFormError" class="form-error" role="alert"></div>
+                                <div class="form-actions"><a href="index.html" class="btn btn-outline">Cancel</a><button
+                                        id="saveGuestButton" class="btn btn-primary"><i
+                                            class="fa-solid fa-floppy-disk"></i> Save Guest</button></div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/guest.js"></script>
+</body>
+
+</html>

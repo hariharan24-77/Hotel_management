@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Staff | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <h1 class="page-title">Edit Staff Account</h1>
+                        <p class="page-subtitle">Update employee information, access role, and account status.</p>
+                    </div>
+                    <section class="card form-card">
+                        <div class="form-card-header">
+                            <div class="form-card-icon"><i class="fa-solid fa-user-pen"></i></div>
+                            <div>
+                                <h2>Staff Details</h2>
+                                <p>Existing account information is loaded from PostgreSQL.</p>
+                            </div>
+                        </div>
+                        <div class="form-card-body">
+                            <form id="editStaffForm">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editName">Full name</label>
+                                        <input type="text" id="editName" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="editEmail">Email address</label>
+                                        <input type="email" id="editEmail" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="editUsername">Username</label>
+                                        <input type="text" id="editUsername" class="form-control" required minlength="3"
+                                            autocomplete="username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="editRole">Access role</label>
+                                        <select id="editRole" class="form-select" required disabled>
+                                            <option value="">Loading roles...</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label" for="editStatus">Account status</label>
+                                        <select id="editStatus" class="form-select" required>
+                                            <option value="true">Active</option>
+                                            <option value="false">Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="editStaffError" class="form-error" role="alert"></div>
+                                <div class="form-actions">
+                                    <a href="index.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i>
+                                        Cancel</a>
+                                    <button id="updateStaffButton" type="submit" class="btn btn-primary">
+                                        <i class="fa-solid fa-floppy-disk"></i> Update Staff
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/staff.js"></script>
+</body>
+
+</html>

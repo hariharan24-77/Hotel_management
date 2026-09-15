@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Guest Checkout | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="operation-page">
+                    <div class="operation-header">
+                        <div class="operation-heading">
+                            <div class="operation-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
+                            <div>
+                                <h1 class="page-title">Guest Checkout</h1>
+                                <p class="page-subtitle">Complete active stays and release rooms for future bookings.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="card operation-card">
+                        <div class="operation-card-header">
+                            <h2>Guests currently staying</h2>
+                            <p>Only checked-in reservations appear here.</p>
+                        </div>
+                        <div class="table-wrapper operation-table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Guest</th>
+                                        <th>Room</th>
+                                        <th>Check-in date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="checkoutTableBody">
+                                    <tr>
+                                        <td colspan="5" class="empty-state">Loading active stays...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/checkin_checkout.js"></script>
+</body>
+
+</html>

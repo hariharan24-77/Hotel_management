@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>New Reservation | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">New Reservation</h1>
+                            <p class="page-subtitle">Select the guest, room, and stay details for this booking.</p>
+                        </div>
+                    </div>
+                    <section class="card form-card">
+                        <div class="form-card-header">
+                            <div class="form-card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                            <div>
+                                <h2>Booking Details</h2>
+                                <p>Required fields are marked with an asterisk and saved securely.</p>
+                            </div>
+                        </div>
+                        <div class="form-card-body">
+                            <form id="reservationForm">
+                                <div class="form-grid">
+                                    <div class="form-group"><label class="form-label" for="guestId">Guest <span
+                                                class="required-mark">*</span></label><select id="guestId"
+                                            class="form-select" required>
+                                            <option value="">Select a guest</option>
+                                        </select></div>
+                                    <div class="form-group"><label class="form-label" for="roomId">Room <span
+                                                class="required-mark">*</span></label><select id="roomId"
+                                            class="form-select" required>
+                                            <option value="">Select a room</option>
+                                        </select></div>
+                                    <div class="form-group"><label class="form-label" for="checkIn">Check-in <span
+                                                class="required-mark">*</span></label><input type="date" id="checkIn"
+                                            class="form-control" required></div>
+                                    <div class="form-group"><label class="form-label" for="checkOut">Check-out <span
+                                                class="required-mark">*</span></label><input type="date" id="checkOut"
+                                            class="form-control" required></div>
+                                    <div class="form-group"><label class="form-label" for="adults">Adults <span
+                                                class="required-mark">*</span></label><input type="number" id="adults"
+                                            class="form-control" value="1" min="1" max="20" required></div>
+                                    <div class="form-group"><label class="form-label" for="children">Children <span
+                                                class="required-mark">*</span></label><input type="number" id="children"
+                                            class="form-control" value="0" min="0" max="20" required></div>
+                                    <div class="form-group full-width"><label class="form-label"
+                                            for="specialRequest">Special request</label><textarea id="specialRequest"
+                                            class="form-control" rows="4" maxlength="2000"
+                                            placeholder="Accessibility, arrival, or room preferences (optional)"></textarea>
+                                    </div>
+                                </div>
+                                <div id="reservationFormError" class="form-error" role="alert"></div>
+                                <div class="form-actions"><a href="index.html" class="btn btn-outline">Cancel</a><button
+                                        id="saveReservationButton" class="btn btn-primary"><i
+                                            class="fa-solid fa-floppy-disk"></i> Save Reservation</button></div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/reservations.js"></script>
+</body>
+
+</html>

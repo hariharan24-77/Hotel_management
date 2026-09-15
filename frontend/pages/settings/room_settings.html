@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Room Defaults | Hotel PMS</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        <div class="main-wrapper">
+            <div id="navbar-container"></div>
+            <main class="dashboard-content">
+                <div class="form-page">
+                    <div class="page-header">
+                        <h1 class="page-title">Room Type Defaults</h1>
+                        <p class="page-subtitle">Create a room type or update its price and capacity.</p>
+                    </div>
+                    <section class="card form-card">
+                        <div class="form-card-body">
+                            <form id="roomSettingForm">
+                                <div class="form-grid">
+                                    <div class="form-group full-width"><label class="form-label">Room type name
+                                            *</label><input id="roomType" class="form-control" required minlength="2"
+                                            maxlength="100" placeholder="Standard, Deluxe, Suite..."></div>
+                                    <div class="form-group"><label class="form-label">Base price *</label><input
+                                            type="number" id="roomPrice" class="form-control" required min="0.01"
+                                            step="0.01"></div>
+                                    <div class="form-group"><label class="form-label">Maximum capacity *</label><input
+                                            type="number" id="roomCapacity" class="form-control" required min="1"
+                                            max="50"></div>
+                                </div>
+                                <div id="settingsError" class="form-error"></div>
+                                <div class="form-actions"><a href="index.html" class="btn btn-outline">Cancel</a><button
+                                        id="saveRoomSettingButton" class="btn btn-primary">Save Room Type</button></div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+</body>
+
+</html>

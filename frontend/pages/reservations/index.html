@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reservations</title>
+
+    <link rel="stylesheet" href="../../assets/css/common.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <div id="sidebar-container"></div>
+
+        <div class="main-wrapper">
+
+            <div id="navbar-container"></div>
+
+            <main class="dashboard-content">
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h1 class="page-title">
+                            Reservations
+                        </h1>
+
+                        <p>
+                            Manage guest bookings
+                        </p>
+
+                    </div>
+
+
+                    <a href="create.html" class="btn btn-primary">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        New Reservation
+
+                    </a>
+
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Booking ID</th>
+
+                                <th>Guest</th>
+
+                                <th>Room</th>
+
+                                <th>Check In</th>
+
+                                <th>Check Out</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="reservationTableBody">
+
+                        </tbody>
+
+
+                    </table>
+
+                </div>
+
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <script src="../../assets/js/api.js"></script>
+
+    <script src="../../assets/js/auth.js"></script>
+
+    <script src="../../assets/js/common.js"></script>
+
+    <script src="../../assets/js/reservations.js"></script>
+
+    <div id="loader-container"></div>
+
+    <script src="../../assets/js/loader.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/loader.html",
+            "loader-container"
+        );
+    </script>
+
+    <div id="modal-container"></div>
+
+    <script src="../../assets/js/modal.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/modal.html",
+            "modal-container"
+        );
+    </script>
+
+    <div id="confirm-modal-container"></div>
+
+    <script src="../../assets/js/confirm-modal.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/confirm-modal.html",
+            "confirm-modal-container"
+        );
+    </script>
+
+    <div id="toast-container"></div>
+
+    <script src="../../assets/js/toast.js"></script>
+
+    <script>
+        loadComponent(
+            "../../components/toast.html",
+            "toast-container"
+        );
+    </script>
+
+</body>
+
+</html>
